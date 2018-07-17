@@ -33,6 +33,18 @@
 		<property name="name" value="DPS, Dlehi"></property>
 		<property name="location" ref="locationbean"></property>
 	</bean>
+
+	or by using nested bean
+
+	<bean id="schoolbean" class="com.java.spring.School">
+		<property name="name" value="DPS, Dlehi"></property>
+		<property name="location">
+			<bean class="com.java.spring.Location">
+				<property name="street" value ="New Road"></property>
+				<property name="zipCode" value ="123"></property>
+			</bean>
+		</property>
+	</bean>
 ```
 
 * Using Multiple ApplicationContext files
