@@ -49,8 +49,8 @@
 
 * Using Multiple ApplicationContext files
 ```java
-		String[] files = new String[]{"resources/applicationContextOne.xml","resources/applicationContextTwo.xml"};
-		ApplicationContext ap = new ClassPathXmlApplicationContext(files);	
+	String[] files = new String[]{"resources/applicationContextOne.xml","resources/applicationContextTwo.xml"};
+	ApplicationContext ap = new ClassPathXmlApplicationContext(files);	
 ```
 
 * J2EE IOC
