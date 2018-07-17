@@ -8,18 +8,37 @@
 * Spring requires Spring JAR/Libraries and JDK Libraries to run an Spring based application 
 * We need a driver class [ClassPathXmlApplicationContext] to run Spring container[IOC], which implements ApplicationContext Interface
 
-* DI using setter
+* DI using setter [primitive data type]
 ```xml
  	<bean id="studentbean" class="com.java.spring.Student">  
     		<property name="name" value="Vimal Jaiswal"></property>  
   	</bean>
 ```
-* DI using constructor
+* DI using constructor [primitive data type]
 ```xml
   <bean id="teacherBean" class="com.java.spring.Teacher" scope="singleton">
 	  	<constructor-arg value="female">
 	  	</constructor-arg>
 	</bean>
+```
+
+* DI on [secondary data type]
+```xml
+	<bean id="locationbean" class="com.java.spring.Location">
+		<property name="street" value ="New Road"></property>
+		<property name="zipCode" value ="123"></property>
+	</bean>
+	------------------------------------------------------
+	<bean id="schoolbean" class="com.java.spring.School">
+		<property name="name" value="DPS, Dlehi"></property>
+		<property name="location" ref="locationbean"></property>
+	</bean>
+```
+
+* Using Multiple ApplicationContext files
+```java
+		String[] files = new String[]{"resources/applicationContextOne.xml","resources/applicationContextTwo.xml"};
+		ApplicationContext ap = new ClassPathXmlApplicationContext(files);	
 ```
 
 * J2EE IOC
