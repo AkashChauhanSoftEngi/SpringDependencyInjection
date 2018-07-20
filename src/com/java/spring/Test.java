@@ -17,16 +17,24 @@ public class Test {
 		String[] files = new String[]{"resources/applicationContextOne.xml","resources/applicationContextTwo.xml"};
 		ApplicationContext ap = new ClassPathXmlApplicationContext(files);
 
-		/* DI using setter method and pass value by XML*/
+		/* DI using Setter method*/
 		Student student = (Student) ap.getBean("studentbean");
 		student.displayInfo("Ajay Dev");
 		
-		/* DI using constructor and pass value by XML*/
+		/* DI using Constructor*/
 		Teacher teacher = (Teacher) ap.getBean("teacherBean");
 		teacher.displayInfo("Shivani Raj");
 		
-		/*For secondary data type, look at the school class and XML file*/
+		/*Secondary Data type D-Injection*/
 		School school = (School) ap.getBean("schoolbean");
 		school.displayInfo();
+		
+		/*Primitive Array[] D-Injection*/
+		Location location = (Location) ap.getBean("locationbean");
+		location.displayinfo();
+		
+		/*Collection Injection*/
+		Department department = (Department) ap.getBean("departmentbean");
+		System.out.println(department.toString());
 	}
 }

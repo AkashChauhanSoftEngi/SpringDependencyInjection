@@ -1,5 +1,7 @@
 package com.java.spring;
 
+import java.util.Arrays;
+
 public class School {
 	private String name;
 	private Location location;
@@ -13,6 +15,6 @@ public class School {
 	}
 	
 	public void displayInfo(){
-		System.out.println("School Name: " + name + ", Address: " + location.getStreet() + ", " + location.getZipCode());
+		System.out.println("School Name: " + name + ", Address: " + Arrays.toString(location.getStreet()) + ", " + location.getZipCode());
 	}
 }

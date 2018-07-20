@@ -5,8 +5,39 @@
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	
 	<bean id="locationbean" class="com.java.spring.Location">
-		<property name="street" value ="New Road"></property>
+		<property name="street">
+			<list>
+				<value>DPS</value>
+				<value>DELHI</value>
+				<value>CP</value>
+			</list>
+		</property>
 		<property name="zipCode" value ="123"></property>
+	</bean>
+	
+	<bean id="departmentbean" class="com.java.spring.Department">
+		<property name="departmentOne">
+			<list>
+				<value>CS</value>
+				<value>IT</value>
+				<value>CSE</value>
+			</list>
+		</property>
+		<property name="departmentTwo">
+			<set>
+				<value>EC</value>
+				<value>ECS</value>
+				<value>EIT</value>
+				<value>EIT</value>
+			</set>
+		</property>
+		<property name="departmentThree">
+			<map>
+				<entry key="1" value="ONE"></entry>
+				<entry key="2" value="TWO"></entry>
+				<entry key="3" value="THREE"></entry>
+			</map>
+		</property>
 	</bean>
 	
 </beans> 
