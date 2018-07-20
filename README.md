@@ -65,11 +65,11 @@
 ```xml
 	<bean id="departmentbean" class="com.java.spring.Department">
 		<property name="departmentOne">
-			<list>
+			<util:list list-class="java.util.Vector">
 				<value>CS</value>
 				<value>IT</value>
 				<value>CSE</value>
-			</list>
+			</util:list>
 		</property>
 		<property name="departmentTwo">
 			<set>
@@ -85,6 +85,25 @@
 				<entry key="2" value="TWO"></entry>
 				<entry key="3" value="THREE"></entry>
 			</map>
+		</property>
+	</bean>
+```
+
+* Property data/file injection in Spring
+```xml
+	<bean id="propertybean" class="com.java.spring.Property">
+		<property name="driver">
+			<props>
+				<prop key="driverName">Sample</prop>
+				<prop key="url">www.sample.com</prop>
+				<prop key="userName">sampleUser</prop>
+			</props>
+		</property>
+			
+		or
+		
+		<property name="driver">
+			<util:properties location="classpath:resources/Drivers.properties"/>
 		</property>
 	</bean>
 ```
