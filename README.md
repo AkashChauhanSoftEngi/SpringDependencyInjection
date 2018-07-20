@@ -8,13 +8,13 @@
 * Spring requires Spring JAR/Libraries and JDK Libraries to run an Spring based application 
 * We need a driver class [ClassPathXmlApplicationContext] to run Spring container[IOC], which implements ApplicationContext Interface
 
-* DI using setter [primitive data type]
+* DI using setter [primitive data type] primitive data injection in Spring using setter method
 ```xml
  	<bean id="studentbean" class="com.java.spring.Student">  
     		<property name="name" value="Vimal Jaiswal"></property>  
   	</bean>
 ```
-* DI using constructor [primitive data type]
+* DI using constructor [primitive data type] or primitive data injection in Spring using constructor
 ```xml
   <bean id="teacherBean" class="com.java.spring.Teacher" scope="singleton">
 	  	<constructor-arg value="female">
@@ -22,7 +22,7 @@
 	</bean>
 ```
 
-* DI on [secondary data type]
+* DI on [secondary data type] or Secondary data injection in Spring
 ```xml
 	<bean id="locationbean" class="com.java.spring.Location">
 		<property name="street" value ="New Road"></property>
@@ -43,6 +43,48 @@
 				<property name="street" value ="New Road"></property>
 				<property name="zipCode" value ="123"></property>
 			</bean>
+		</property>
+	</bean>
+```
+
+* DI using primitive Array or Primitive Array injection in Spring
+```xml
+	<bean id="locationbean" class="com.java.spring.Location">
+		<property name="street">
+			<array>
+				<value>DPS</value>
+				<value>DELHI</value>
+				<value>CP</value>
+			</array>
+		</property>
+		<property name="zipCode" value ="123"></property>
+	</bean>
+```
+
+* DI using Collections or Collection Injection in Spring
+```xml
+	<bean id="departmentbean" class="com.java.spring.Department">
+		<property name="departmentOne">
+			<list>
+				<value>CS</value>
+				<value>IT</value>
+				<value>CSE</value>
+			</list>
+		</property>
+		<property name="departmentTwo">
+			<set>
+				<value>EC</value>
+				<value>ECS</value>
+				<value>EIT</value>
+				<value>EIT</value>
+			</set>
+		</property>
+		<property name="departmentThree">
+			<map>
+				<entry key="1" value="ONE"></entry>
+				<entry key="2" value="TWO"></entry>
+				<entry key="3" value="THREE"></entry>
+			</map>
 		</property>
 	</bean>
 ```
