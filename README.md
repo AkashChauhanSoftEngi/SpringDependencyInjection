@@ -1,4 +1,4 @@
-# SpringDependencyInjection
+# SpringDependencyInjectionUsingXml
 
 * Spring 3 + J2EE (J2EE Container) + DI using setter and constructor, Example
 * Dependency Injection using Setter and constructor, check XML file how to pass values to setters and constructors
