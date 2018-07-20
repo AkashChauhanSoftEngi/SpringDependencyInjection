@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans  
-               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-2.5.xsd">
 	
 	<bean id="locationbean" class="com.java.spring.Location">
 		<property name="street">
-			<list>
+			<array>
 				<value>DPS</value>
 				<value>DELHI</value>
 				<value>CP</value>
-			</list>
+			</array>
 		</property>
 		<property name="zipCode" value ="123"></property>
 	</bean>
 	
 	<bean id="departmentbean" class="com.java.spring.Department">
 		<property name="departmentOne">
-			<list>
+			<util:list list-class="java.util.Vector">
 				<value>CS</value>
 				<value>IT</value>
 				<value>CSE</value>
-			</list>
+			</util:list>
 		</property>
 		<property name="departmentTwo">
 			<set>
@@ -37,6 +41,19 @@
 				<entry key="2" value="TWO"></entry>
 				<entry key="3" value="THREE"></entry>
 			</map>
+		</property>
+	</bean>
+	<bean id="propertybean" class="com.java.spring.Property">
+<!-- 		<property name="driver">
+			<props>
+				<prop key="driverName">Sample</prop>
+				<prop key="url">www.sample.com</prop>
+				<prop key="userName">sampleUser</prop>
+			</props>
+		</property> -->
+		
+		<property name="driver">
+		<util:properties location="classpath:resources/Drivers.properties"/>
 		</property>
 	</bean>
 	

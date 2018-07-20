@@ -36,5 +36,9 @@ public class Test {
 		/*Collection Injection*/
 		Department department = (Department) ap.getBean("departmentbean");
 		System.out.println(department.toString());
+		
+		/*Property data/file Injection [Static data]*/
+		Property property = (Property)ap.getBean("propertybean");
+		property.printPropertyData();
 	}
 }
