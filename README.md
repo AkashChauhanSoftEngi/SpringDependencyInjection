@@ -100,7 +100,7 @@
 			</props>
 		</property>
 			
-		or
+		<!-- ----------------OR-------------------- -->
 		
 		<property name="driver">
 			<util:properties location="classpath:resources/Drivers.properties"/>
