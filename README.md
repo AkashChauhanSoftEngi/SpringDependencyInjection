@@ -121,3 +121,13 @@
 
 > **###1. Technologies**
 * Spring 3.0.1.RELEASE
+
+> **###2. Spring Circular dependency**
+* a>b>a
+* Solution
+  - redesign comonents, dependent on each other
+  - @Lazy {upload only when needed, one of them}
+  - Use setter injection (or field injection){optional, when needed}, instead of constructor injection {@Required}
+  - Use @PostConstruct to set the other dependency
+  - InitializingBean, afterPropertySet
+* Reference: https://www.baeldung.com/circular-dependencies-in-spring
